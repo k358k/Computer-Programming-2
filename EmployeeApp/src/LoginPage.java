@@ -14,18 +14,17 @@ public class LoginPage extends JFrame implements ActionListener {
     JLabel loginTitle;
     JLabel roleTextLabel;
     JButton loginButton;
+    JComboBox rolebox;
 
 
 
     LoginPage() {
+        String [] roles = {"Employee","Administrator"};
+        rolebox = new JComboBox(roles);
+        rolebox.setBounds(50,80,160,30);
+
         roleTextLabel = new JLabel("Role");
         roleTextLabel.setBounds(50,55,160,30);
-
-        roleTextField = new JTextField();
-        roleTextField.setBounds(50,80,160,30);
-        roleTextField.setBorder(BorderFactory.createLineBorder(Color.BLACK,1));
-
-
 
         loginTitle = new JLabel("Login");
         loginTitle.setBounds(90,20,160,30);
@@ -69,8 +68,9 @@ public class LoginPage extends JFrame implements ActionListener {
         panel.add(passWordTextLabel);
         panel.add(loginButton);
         panel.add(loginTitle);
-        panel.add(roleTextField);
         panel.add(roleTextLabel);
+        panel.add(rolebox);
+
 
         this.setTitle("Login Page");
         this.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
