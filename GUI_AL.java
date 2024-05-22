@@ -1,6 +1,7 @@
 import java.awt.Color;
 import java.awt.Component;
 import java.awt.Font;
+import java.awt.Image;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 
@@ -50,65 +51,68 @@ public class GUI_AL implements ActionListener{
 	
 		
 		// NAME **
-		nlabel = new JLabel ("Full Name");
-		nlabel.setBounds(120,190,80,25);
-		
+		nlabel = new JLabel ("Username :");
+		nlabel.setBounds(590,190,140,25);
+		nlabel.setFont(new Font ("STYLUS", Font.PLAIN, 20) );
+
 	
 		fullnameText = new JTextField();
-		fullnameText.setBounds(190,190,165,25);
+		fullnameText.setBounds(730,190,165,25);
 		
 		
 		
 		// PASSWORD **
-		plabel = new JLabel ("Password");
-		plabel.setBounds(120,230,80,25);
+		plabel = new JLabel ("Password :");
+		plabel.setBounds(590,230,140,25);
+		plabel.setFont(new Font ("STYLUS", Font.PLAIN, 20) );
 		
 	
 		passwordText = new JTextField();
-		passwordText.setBounds(190,230,165,25);
+		passwordText.setBounds(730,230,165,25);
 	
 		
 		
 		// ROLE **
-		rlabel = new JLabel ("Role");
-		rlabel.setBounds(120,270,80,25);
+		rlabel = new JLabel ("Role :");
+		rlabel.setBounds(590,270,140,25);
 		// *** JLabel is for the permanent words on the frame ***
-		
+		rlabel.setFont(new Font ("STYLUS", Font.PLAIN, 20) );
+
 	
 		roleText = new JTextField();
-		roleText.setBounds(190,270,165,25);	
+		roleText.setBounds(730,270,165,25);	
 		//*** JTextField is for the text box (where you can put answer) ***
 		//*** setBounds set the boundaries of the text box ***
 			
 	
-		
+			
 		//MotorPH sign *
 		Mlabel = new JLabel ("Motor PH System");
-		Mlabel.setBounds(80,40,320,55);
+		Mlabel.setBounds(580,-450,500,1000);
 		Mlabel.setForeground(new Color (0x99FFFF));  
-		Mlabel.setFont(new Font("BROADWAY", Font.PLAIN, 35));
+		Mlabel.setFont(new Font("broadway", Font.PLAIN, 40));
 		
 		
 		Mpanel = new JPanel();
 		Mpanel.setBackground(new Color(0x330066));
 									// hexadecimal values for color
-		Mpanel.setBounds(50,20,380,90);
+		Mpanel.setBounds(500,0,500,100);
 					//left-right on the frame, up-down on the frame, length of the panel, width of the panel		
 		
 		
 		// background panel
 		bpanel = new JPanel();
 		bpanel.setBackground(new Color(0xF0F0F0));
-		bpanel.setBounds(50,40,380,390);
+		bpanel.setBounds(500,0,500, 1000);
 
 		String[] roles = {"        ", "Customer Service and Relations", "Supply Chain and Logistics", "Sales & Marketing", "Account Rank and File", "Account Team Leader", "Account Manager", "Payroll Rank and File", "Payroll Team Leader", "Payroll Manager", "Accounting Head", "HR Rank and File", "HR Team Leader", "HR Manager", "IT Operations and Systems", "Chief Marketing Officer", "Chief Finance Officer", "Chief Operating Officer", "Chief Executive Officer"};
 		JComboBox choices =new JComboBox(roles);
-		choices.setBounds(190,270,165,25);
+		choices.setBounds(730,270,165,25);
 
 		
 		button = new JButton("LogIn");
 		button.addActionListener(new GUI_AL());
-		button.setBounds(195,330,100,25);
+		button.setBounds(700,330,100,30);
 		button.setFocusable(false);// removes the border of the text on the button
 	
 		// ** FRAME **
@@ -119,7 +123,7 @@ public class GUI_AL implements ActionListener{
 
 		
 		f.setResizable(false); // prevent frame from being resized
-		f.setSize(500,500); //sets the size of the frame (x and y-dimension of the frame)
+		f.setSize(1000,700); //sets the size of the frame (x and y-dimension of the frame)
 		f.setVisible(true); // makes the frame visible****
 		
 		// role part
@@ -133,6 +137,7 @@ public class GUI_AL implements ActionListener{
 		//password
 		f.add(passwordText);
 		f.add(plabel);
+		
 		
 		//MotorPH System sign
 		f.add(Mlabel);
@@ -173,7 +178,8 @@ public class GUI_AL implements ActionListener{
 		
 		if(e.getSource()==button) { //**** NEEDED TO GET TO THE NEXT PAGE WHEN BUTTON IS CLICKED *****
 			InfoPage informations = new InfoPage(); // ** this is calling out the InfoPage class   **
-			
+
+
 			
 			
 		}
