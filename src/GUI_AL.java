@@ -13,7 +13,7 @@ import javax.swing.JTextField;
 public class GUI_AL implements ActionListener{
 
 
-    JFrame f;
+    private static JFrame f;
     private static JLabel nlabel;
     private static JTextField fullnameText;
     private static JLabel plabel;
@@ -25,18 +25,18 @@ public class GUI_AL implements ActionListener{
     private static JLabel icon;
 
     public static void main(String[] args) {
-    	// TODO Auto-generated method stub
-    
+        // TODO Auto-generated method stub
+
 
         //	InfoPage info = new InfoPage(); ** Not Needed ? **
-		
+
 	/*	button = new JButton("LogIn");
 		button.addActionListener(new GUI_AL());
 		button.setBounds(195,330,100,25);
 		button = new JButton("LogIn");
 		button.addActionListener(new GUI_AL());
-		button.setBounds(195,330,100,25);			
-	
+		button.setBounds(195,330,100,25);
+
 		JFrame f = new JFrame(); // the code "JFrame null = new JFrame" creates a frame
 		f.setTitle("MotorPH System"); // sets the tile of the frame (the title bar)
 		f.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);// exit out of application (makes the frame closed totally and not just hide)
@@ -88,7 +88,7 @@ public class GUI_AL implements ActionListener{
         bpanel.setBackground(new Color(0xF0F0F0));
         bpanel.setBounds(500,0,500, 1000);
 
-   
+
 
         button = new JButton("LogIn");
         button.addActionListener(new GUI_AL());
@@ -96,7 +96,7 @@ public class GUI_AL implements ActionListener{
         button.setFocusable(false);// removes the border of the text on the button
 
         // ** FRAME **
-        JFrame f = new JFrame(); // the code "JFrame null = new JFrame" creates a frame
+         f = new JFrame(); // the code "JFrame null = new JFrame" creates a frame
         f.setTitle("MotorPH System"); // sets the tile of the frame (the title bar)
         f.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);// exit out of application (makes the frame closed totally and not just hide)
         f.setLayout(null);// allows you to resize the panels? ** CHECK!! **
@@ -159,23 +159,20 @@ public class GUI_AL implements ActionListener{
   /*  public void actionPerformed(ActionEvent e) {
         if (e.getSource() == button) {
             MainPage mainpage = new MainPage(); // Assuming MainPage opens a new frame		*/
-  
-
-            public void actionPerformed(ActionEvent e) {
-                if(e.getSource()==button){
-                    dispose(); // exits the previous frame
-
-                    new MainPage(); // open new frame
 
 
-    	}
+    public void actionPerformed(ActionEvent e) {
+        if(e.getSource()==button){
+            f.dispose(); // exits the previous frame
+
+//            new MainPage(); // open new frame
+
+
+        }
     }
 
 
 
 
-	private void dispose() {
-		// TODO Auto-generated method stub
-		
-	}
+
 }
