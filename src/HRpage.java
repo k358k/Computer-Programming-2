@@ -6,7 +6,7 @@
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 
-	public class HRpage{
+	public class HRpage implements ActionListener{
 			JPanel panel;
 	        JButton button;
 	        DefaultTableModel tableModel;
@@ -14,11 +14,14 @@ import java.awt.event.ActionListener;
 	        JButton viewbutton;
 	        JButton updatebutton;
 	        JButton deletebutton;
+	        JButton backbutton;
 	        JLabel employeelistlabel;
 	        JFrame f;
 
 	    HRpage(){
-	          deletebutton = new JButton("Delete");
+
+	    	
+	        deletebutton = new JButton("Delete");
 	        deletebutton.setBounds(785,200,120,30);
 	      //  deletebutton.addActionListener(this);
 
@@ -48,9 +51,22 @@ import java.awt.event.ActionListener;
 	        viewbutton.setFocusable(false);// removes the border of the text on the button
 	        viewbutton.setForeground(Color.WHITE);
 
+	        backbutton = new JButton("Back");
+	        backbutton.setBounds(785,440,120,30);
+	        backbutton.addActionListener(this);  // Register the back button 
+	        
+	        backbutton.setBorder(BorderFactory.createLineBorder(Color.BLACK,2));
+	        backbutton.setBackground(new Color(51,102,153));
+	        backbutton.setFont(new Font(null,Font.BOLD,13));
+	        backbutton.setFocusable(false);// removes the border of the text on the button
+	        backbutton.setForeground(Color.WHITE);
+
+	        
+	        
+	        
 	        employeelistlabel = new JLabel("MotorPH Employee List");
-	        employeelistlabel.setBounds(230,30,530,40);
-	        employeelistlabel.setFont(new Font("broadway",Font.BOLD,35));
+	        employeelistlabel.setBounds(210,35,530,40);
+	        employeelistlabel.setFont(new Font("broadway",Font.BOLD,40));
 	        employeelistlabel.setForeground(new Color (0xe3c1fe));
 
 
@@ -58,7 +74,7 @@ import java.awt.event.ActionListener;
 	        panel.setBounds(765,100,160,510);
 	        panel.setLayout(null);
 	        panel.setBorder(BorderFactory.createLineBorder(Color.BLACK,5));
-	        panel.setBackground(new Color (0xDAD8C9));
+	        panel.setBackground(new Color (0xFFFFFF));
 
 	        tableModel = new DefaultTableModel();
 	        tableModel.addColumn("Employee #");
@@ -68,17 +84,17 @@ import java.awt.event.ActionListener;
 	        tableModel.addColumn("PhilHealth");
 	        tableModel.addColumn("TIN");
 	        tableModel.addColumn("Pagibig");
+	        
 	        //(new Color(0x6A6767));
 
 	        
 	        table = new JTable(tableModel);
-	        table.setBackground(new Color(85,85,85));
 	        
 	        //table frame(sizes)
 	        JScrollPane scrollPane = new JScrollPane(table);
 	        scrollPane.setBounds(30,100,720,510);
 	        scrollPane.setBorder(BorderFactory.createLineBorder(Color.BLACK,5));
-	        
+
 
 	        
 
@@ -100,25 +116,29 @@ import java.awt.event.ActionListener;
 
 	   
 	      
-	        f.getContentPane().setBackground(new Color(85,85,85));
+	        f.getContentPane().setBackground(new Color(0x55009b));
 	        f.add(scrollPane);
+
 	        f.add(viewbutton);
 	        f.add(updatebutton);
 	        f.add(deletebutton);
+	        f.add(backbutton);
+	        
 	        f.add(panel);
 	        f.add(employeelistlabel);
 	 
 	    
 	
+	    }
 	
 	
-	
-	/*	@Override
+		@Override
 		public void actionPerformed(ActionEvent e) {
 			// TODO Auto-generated method stub			*/
 			
-		}
+			if(e.getSource() ==backbutton);
+			 f.dispose();  // Close the current frame
 	}
-	
+	}
 	
 

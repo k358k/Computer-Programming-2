@@ -4,7 +4,6 @@ import java.awt.event.ActionListener;
 
 import javax.swing.ImageIcon;
 import javax.swing.JButton;
-import javax.swing.JComboBox;
 import javax.swing.JFrame;
 import javax.swing.JLabel;
 import javax.swing.JPanel;
@@ -96,12 +95,10 @@ public class GUI_AL implements ActionListener{
         button.setFocusable(false);// removes the border of the text on the button
 
         // ** FRAME **
-         f = new JFrame(); // the code "JFrame null = new JFrame" creates a frame
+        f = new JFrame(); // the code "JFrame null = new JFrame" creates a frame
         f.setTitle("MotorPH System"); // sets the tile of the frame (the title bar)
         f.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);// exit out of application (makes the frame closed totally and not just hide)
         f.setLayout(null);// allows you to resize the panels? ** CHECK!! **
-
-
         f.setResizable(false); // prevent frame from being resized
         f.setSize(1000,700); //sets the size of the frame (x and y-dimension of the frame)
 
@@ -156,16 +153,11 @@ public class GUI_AL implements ActionListener{
 
 
     @Override
-  /*  public void actionPerformed(ActionEvent e) {
-        if (e.getSource() == button) {
-            MainPage mainpage = new MainPage(); // Assuming MainPage opens a new frame		*/
-
-
     public void actionPerformed(ActionEvent e) {
         if(e.getSource()==button){
             f.dispose(); // exits the previous frame
 
-//            new MainPage(); // open new frame
+           new MainPage(); // open new frame
 
 
         }

@@ -10,17 +10,19 @@ import javax.swing.JFrame;
 import javax.swing.JLabel;
 import javax.swing.JPanel;
 
+import snippet.EmployeeMainPage;
+
 
 public class MainPage implements ActionListener{
 
-	JFrame f = new JFrame(); 
-	JPanel bpanel;
-	JPanel Mpanel;
-	JLabel Mlabel;
-	JButton HRbutton;
-	JButton Accountsbutton;
-	JButton Ebutton;
-    private static JLabel icon;
+	 private static JFrame f = new JFrame(); 
+	 private static JPanel bpanel;
+	 private static JPanel Mpanel;
+	 private static JLabel Mlabel;
+	 private static JButton HRbutton;
+	 private static JButton Accountsbutton;
+	 private static JButton Ebutton;
+	 private static JLabel icon;
 
 	
 	MainPage(){
@@ -31,21 +33,21 @@ public class MainPage implements ActionListener{
 	HRbutton.addActionListener(this);
 	HRbutton.setBounds(580,160,330,100);
 	HRbutton.setFocusable(false);// removes the border of the text on the button 
-	HRbutton.setFont(new Font ("Courier New", Font.BOLD, 17) );
+	HRbutton.setFont(new Font ("STYLUS", Font.BOLD, 18) );
 
 
 	Accountsbutton = new JButton("Accounts/ Payroll Personnel");
 	Accountsbutton.addActionListener(this);
 	Accountsbutton.setBounds(580,275,330,100);
 	Accountsbutton.setFocusable(false);// removes the border of the text on the button
-	Accountsbutton.setFont(new Font ("Courier New", Font.BOLD, 17) );
+	Accountsbutton.setFont(new Font ("STYLUS", Font.BOLD, 18) );
 
 		
 	Ebutton = new JButton("Employees");
 	Ebutton.addActionListener(this);
 	Ebutton.setBounds(580,390,330,100);
 	Ebutton.setFocusable(false);// removes the border of the text on the button
-	Ebutton.setFont(new Font ("Courier New", Font.BOLD, 17) );
+	Ebutton.setFont(new Font ("STYLUS", Font.BOLD, 18) );
 
 		
 		
@@ -68,14 +70,15 @@ public class MainPage implements ActionListener{
 		
 	
 		
-	JFrame f = new JFrame(); // the code "JFrame null = new JFrame" creates a frame
-	f.setTitle("MotorPH System"); // sets the tile of the frame (the title bar)
-	f.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);// exit out of application (makes the frame closed totally and not just hide)
-	f.setLayout(null);// allows you to resize the panels? ** CHECK!! **
+	f = new JFrame(); // the code "JFrame null = new JFrame" creates a frame
+    f.setTitle("MotorPH System"); // sets the tile of the frame (the title bar)
+    f.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);// exit out of application (makes the frame closed totally and not just hide)
+    f.setLayout(null);// allows you to resize the panels? ** CHECK!! **
 
-	f.setResizable(false); // prevent frame from being resized
-	f.setSize(1000,700); //sets the size of the frame (x and y-dimension of the frame)
-	f.getContentPane().setBackground(new Color(0xCCCCFF)); // sets the color of the background
+
+    f.setResizable(false); // prevent frame from being resized
+    f.setSize(1000,700); //sets the size of the frame (x and y-dimension of the frame)
+    f.getContentPane().setBackground(new Color(0xCCCCFF)); // sets the color of the background
 	// red, green, blue
 
 	f.add(Mlabel);	
@@ -117,18 +120,21 @@ public class MainPage implements ActionListener{
 		System.out.println(user + " ." + password + " ," + role);  */
 		
 		
-		if(e.getSource()== Ebutton) { //**** NEEDED TO GET TO THE NEXT PAGE WHEN BUTTON IS CLICKED *****
-			//f.dispose();
-			InfoPage informations = new InfoPage(); // ** this is calling out the InfoPage class   **
+		   if(e.getSource()==Ebutton){
+	            f.dispose(); // exits the previous frame
+	            new EmployeeMainPage(); // ** this is calling out the InfoPage class   **
 
 			
 		} else if(e.getSource()== HRbutton) {
-		//	f.dispose();
-			HRpage hrpage = new HRpage();
+			  f.dispose();			
+			  new HRpage();
 			
 		} else if(e.getSource()== Accountsbutton) {
-			//f.dispose();
-			AccountsPage accountsPage = new AccountsPage();
+			  f.dispose();			
+			  new AccountsPage();
 		}
 	}
+
+
+
 }
